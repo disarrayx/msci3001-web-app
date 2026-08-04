@@ -1,14 +1,8 @@
-import { useState } from 'react'
 import '@/styles/App.css'
+import { Outlet } from "react-router";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <p>hello world</p>
-    </>
-  )
+  return <Outlet />
 }
 
 export default App

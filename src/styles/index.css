@@ -1,10 +1,23 @@
 @import "tailwindcss";
 
 /* index.css also functions as a global.css file */
+@custom-variant dark (&:where(.dark, .dark *));
 
 @font-face {
   font-family: "dm-sans";
   src: url('../assets/dm-sans.ttf');
+}
+
+/* tailwind definitions */
+@theme {
+  --font-display: "dm-sans", "sans-serif";
+  --color-*: initial;
+  --color-black: #171717;
+  --color-white: #ECECEC;
+  --color-blue: #004FCD;
+  --color-red: #CD0000;
+  --color-light-mode-gray: #505050;
+  --color-dark-mode-gray: #B0B0B0;
 }
 
 :root {
@@ -14,25 +27,14 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
-  /* :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #0e0e0e;
-    --border: #2e303a;
-  } */
-
   .icon {
     filter: invert(1) brightness(2);
   }
 }
-
+/* 
 #root {
   width: 1126px;
   max-width: 100%;
@@ -43,7 +45,7 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-}
+} */
 
 body {
   margin: 0;
@@ -92,8 +94,10 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
-
-
-button:hover {
+button {
   cursor: pointer;
+  background-color: unset;
+}
+a:hover {
+  background-color: unset;
 }
