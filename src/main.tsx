@@ -13,7 +13,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
       <HashRouter>
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-          <div className="p-4 min-h-screen bg-white text-black dark:bg-black dark:text-white">
+          <div className="flex flex-col p-4 min-h-screen bg-white text-black dark:bg-black dark:text-white">
             <Navbar />
             <Routes>
               <Route path="/" element={<App/>}>
