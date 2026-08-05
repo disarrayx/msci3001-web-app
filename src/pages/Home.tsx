@@ -7,7 +7,7 @@ function Home() {
   return (
     <div className="flex flex-col grow justify-center items-center min-h-full min-w-full gap-12">
       <div className="flex flex-col min-h-full min-w-full items-center gap-2">
-        <h1>Predatory-Prey Dynamics </h1>
+        <h1><b>Predatory-Prey Dynamics</b></h1>
         <h2>Constructing differential equations & understanding Lotka-Volterra</h2>
       </div>
 
