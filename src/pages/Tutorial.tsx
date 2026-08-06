@@ -1,4 +1,5 @@
-import TutorialContainer from '@/components/tutorial-container'
+import PlaygroundContainer from '@/components/containers/playground-container'
+import TutorialContainer from '@/components/containers/tutorial-container'
 import '@/styles/index.css'
 
 export type TutorialContent = Array<React.ReactNode>
@@ -28,7 +29,36 @@ function Tutorial() {
       </ul>
       <br/><p>For this equation: the more individuals there are, the faster a population. Let's visualise this.</p>
     </>,
+    // playground things
     <>
+      <div className="flex flex-col items-center gap-2">
+        <h2 className="text-center">Constructing the Lotka-Volterra Equation</h2>
+        <p>We will start with the basic graph. Notice how the population numbers <b>grow exponentially.</b></p>
+      </div>
+      <div className="px-16 p-8">
+        <PlaygroundContainer 
+          content={
+          <>
+            <div className="flex flex-col items-center gap-2 px-4">
+              <h3><b>Differential Equations</b></h3>
+              <h3 className="text-blue">dx/dt = x</h3>
+              <p className="text-light-mode-gray dark:text-dark-mode-gray">Prey numbers grow in proportion to the existing number of prey.</p>
+              <h3 className="text-red">dy/dt = y</h3>
+              <p className="text-light-mode-gray dark:text-dark-mode-gray">Predator numbers decline in proportion to the existing number of predators.</p>
+            </div>
+          </>
+          }
+          equations={{simple: true, lv: false}}
+        /> 
+      </div>
+    </>,
+    // extra things to note
+    <>
+      <h2 className="text-center">Some extra things to note</h2>
+      <br/><p>Lotka-Volterra is just one of many examples that demonstrates how we use math equations to model the real world.</p>
+      <br/><p>One thing to note is that most models we use are a <b>simplification of reality</b>. 
+        We need to accept when things are “good enough” for our purposes - the more parameters, 
+        the harder equations are to compute and the more complex our system becomes.</p>
     </>
   ]
   

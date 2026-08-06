@@ -1,7 +1,7 @@
 import { Link } from 'react-router'
 import { Button } from '@/components/ui/button'
 import { House, Box, Book, Sun, Moon } from '@/assets/svg.tsx'
-import { useTheme } from "@/components/theme-provider"
+import { useTheme } from "@/components/ui/theme-provider"
 
 function Navbar() {
   const { theme, setTheme } = useTheme()

@@ -1,5 +1,10 @@
 import { Solver, type Derivative } from '@/lib/odex'
 
+export type Equations = {
+  simple: boolean;
+  lv: boolean;
+};
+
 export type SliderConfig = {
   key: string
   label: string
@@ -66,14 +71,14 @@ export const lvSliders: SliderConfig[] = [
   { key: 'beta', label: 'β (predation rate)', defaultValue: 0.4, min: 0, max: 2, step: 0.01 },
   { key: 'gamma', label: 'γ (predator death)', defaultValue: 0.4, min: 0, max: 2, step: 0.01 },
   { key: 'delta', label: 'δ (predator growth)', defaultValue: 0.1, min: 0, max: 2, step: 0.01 },
-  { key: 'x0', label: 'x₀ (initial prey)', defaultValue: 10, min: 0, max: 50, step: 1 },
-  { key: 'y0', label: 'y₀ (initial predators)', defaultValue: 5, min: 0, max: 50, step: 1 },
+  { key: 'x0', label: 'x₀ (initial num. prey)', defaultValue: 10, min: 0, max: 50, step: 1 },
+  { key: 'y0', label: 'y₀ (initial num. predators)', defaultValue: 5, min: 0, max: 50, step: 1 },
   { key: 'tEnd', label: 'time end', defaultValue: 100, min: 0, max: 300, step: 10 },
 ]
 
 export const basicSliders: SliderConfig[] = [
-  { key: 'x0', label: 'x₀', defaultValue: 10, min: 0, max: 50, step: 1 },
-  { key: 'y0', label: 'y₀', defaultValue: 5, min: 0, max: 50, step: 1 },
+  { key: 'x0', label: 'x₀ (initial num. prey)', defaultValue: 10, min: 0, max: 50, step: 1 },
+  { key: 'y0', label: 'y₀ (initial num. predators)', defaultValue: 5, min: 0, max: 50, step: 1 },
   { key: 'tEnd', label: 'time end', defaultValue: 2, min: 0, max: 25, step: 1 },
 ]
 

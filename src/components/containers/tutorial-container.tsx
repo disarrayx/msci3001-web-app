@@ -88,8 +88,8 @@ function TutorialContainer({ content }: TutorialContainerProps) {
 
     // page
     return (
-        <div className="flex grow flex-col min-h-full min-w-full items-center p-16 gap-x-8">
-            <div className="grow min-h-full flex flex-col">
+        <div className="flex grow flex-col min-h-full min-w-full items-center p-10 gap-x-8">
+            <div className="grow min-h-full min-w-full flex flex-col">
                 {content[progress]}
             </div>
             <div className="flex justify-between min-w-full">

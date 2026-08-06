@@ -2,8 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { HashRouter, Routes, Route } from "react-router";
 import '@/styles/index.css'
-import Navbar from '@/components/navbar.tsx'
-import { ThemeProvider } from '@/components/theme-provider'
+import Navbar from '@/components/ui/navbar'
+import { ThemeProvider } from '@/components/ui/theme-provider'
 import App from '@/App'
 import Home from './pages/Home';
 import Tutorial from '@/pages/Tutorial'
