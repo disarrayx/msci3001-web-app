@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Button } from '@/components/ui/button'
 import { Arrow } from '@/assets/svg'
 import type { TutorialContent } from "@/pages/Tutorial";
-import { Link } from "react-router";
 import { useNavigate } from "react-router";
 import { useCallback } from 'react';
 
@@ -28,18 +27,16 @@ function TutorialContainer({ content }: TutorialContainerProps) {
             switch(e.key) {
                 case 'ArrowLeft':
                     e.preventDefault();
-                    if (progress === 0) {
-                        navigate('/');
-                    } else {
+                    if (progress !== 0) {
                         decreaseProgress();
-                    }
+                        // navigate('/');
+                    } 
                     break;
                 case 'ArrowRight':
                     e.preventDefault();
-                    if (progress === content.length - 1) {
-                        navigate('/playground');
-                    } else {
+                    if (progress !== content.length - 1) {
                         increaseProgress();
+                        // navigate('/playground');
                     }
                     break;
                 default:
@@ -54,34 +51,24 @@ function TutorialContainer({ content }: TutorialContainerProps) {
     // button logic
     const normalBackButton = 
         <Button variant="outline" onClick={decreaseProgress}>
-            <Arrow className="stroke-black dark:stroke-white stroke-2 size-8 rotate-180" />
-            <p>Back</p>
+            <Arrow className="z-1 size-8 rotate-180" />
+            <p className="z-1">Back</p>
         </Button>
 
     const homeBackButton = 
-        <Button variant="outline">
-            <Link to="/" className="inline-flex items-center gap-1.5">
-                <Arrow className="stroke-black dark:stroke-white stroke-2 size-8 rotate-180" />
-                <p>Back</p>
-            </Link>
-        </Button>
+        <div></div>
     
     let backButton = <></>
     progress == 0 ? backButton = homeBackButton : backButton = normalBackButton
 
     const normalNextButton = 
         <Button variant="outline" onClick={increaseProgress}>
-            <Arrow className="stroke-black dark:stroke-white stroke-2 size-8" />
-            <p>Next</p>
+            <Arrow className="z-1 size-8" />
+            <p className="z-1">Next</p>
         </Button>
     
     const playgroundNextButton = 
-        <Button variant="outline" onClick={increaseProgress}>
-            <Link to="/playground" className="inline-flex items-center gap-1.5">
-                <Arrow className="stroke-black dark:stroke-white stroke-2 size-8" />
-                <p>Next</p>
-            </Link>
-        </Button>
+        <div></div>
 
     let nextButton = <></>
     progress == content.length - 1 ? nextButton = playgroundNextButton : nextButton = normalNextButton

@@ -9,7 +9,7 @@ export type PlaygroundContent = React.ReactNode
 function Playground() {
   const content = 
     <>
-      <h3><b>Equation Selector</b></h3>
+      {/* <h3><b>Equation Selector</b></h3> */}
     </>
   
   return (

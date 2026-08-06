@@ -9,6 +9,30 @@ interface PlaygroundContainerProps {
     equations: Equations
 }
 
+// Equation text shown above the sliders, keyed by graph type
+const EquationText: Record<OdeKey, { dx: string; dy: string }> = {
+    basic: {
+        dx: "dx/dt = x",
+        dy: "dy/dt = y",
+    },
+    "lotka-volterra": {
+        dx: "dx/dt = \u03B1x - \u03B2xy",
+        dy: "dy/dt = -\u03B3y + \u03B4xy",
+    },
+    lv1: {
+        dx: "dx/dt = x",
+        dy: "dy/dt = -\u03B3y + \u03B4xy",
+    },
+    lv2: {
+        dx: "dx/dt = \u03B1x - \u03B2xy",
+        dy: "dy/dt = y",
+    },
+    lv3: {
+        dx: "dx/dt = \u03B1x - \u03B2xy",
+        dy: "dy/dt = -\u03B3y + \u03B4xy",
+    },
+}
+
 function PlaygroundContainer({ content, equations }: PlaygroundContainerProps) {
     const getInitialGraph = (): OdeKey => {
         if (!equations.simple) return 'basic'
@@ -76,6 +100,7 @@ function PlaygroundContainer({ content, equations }: PlaygroundContainerProps) {
             ))
         : []
 
+    const currentEquations = EquationText[graph]
 
     return (
         <div className="flex grow min-h-full min-w-full gap-x-4">
@@ -88,6 +113,11 @@ function PlaygroundContainer({ content, equations }: PlaygroundContainerProps) {
                 {/* radio buttons */}
                 <div className="flex gap-x-2">
                     {radioButtons}
+                </div>
+                {/* equations */}
+                <div className="flex flex-col items-center gap-y-1">
+                    <h3 className="text-blue">{currentEquations.dx}</h3>
+                    <h3 className="text-red">{currentEquations.dy}</h3>
                 </div>
                 {/* sliders */}
                 <div className="flex flex-col gap-y-0.5 w-[80%]">

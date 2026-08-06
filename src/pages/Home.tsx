@@ -14,14 +14,14 @@ function Home() {
     <div className="flex flex-col min-h-full min-w-full items-center gap-2">
       <Button variant="outline" className="w-50 flex gap-2" asChild>
         <Link to="/tutorial">
-          <Play className="stroke-black dark:stroke-white stroke-2 size-8" />
-          <p className="text-xl">Begin tutorial</p>
+          <Play className="z-1 size-8"/>
+          <p className="z-1 text-xl">Begin tutorial</p>
         </Link>
       </Button>
       <Button variant="outline" className="w-50 flex gap-2" asChild>
         <Link to="/playground">
-          <Box className="stroke-black dark:stroke-white stroke-2 size-8" />
-          <p className="text-xl">Playground</p>
+          <Box className="z-1 size-8" />
+          <p className="z-1 text-xl">Playground</p>
         </Link>
       </Button>
     </div>

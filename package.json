@@ -10,8 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -u \"github-actions-bot <github-actions@github.com>\" --repo https://x-access-token:${GITHUB_TOKEN}@github.com/disarrayx/msci3001-web-app.git"
-  },
+"deploy": "gh-pages -d dist -u \"github-actions-bot <github-actions@github.com>\" --repo git@github-disarrayx:disarrayx/msci3001-web-app.git"  },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
     "@tailwindcss/vite": "^4.3.3",

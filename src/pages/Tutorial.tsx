@@ -1,8 +1,11 @@
+import { Box, House } from '@/assets/svg'
 import TutorialContainer from '@/components/containers/tutorial-container'
 import TutorialPlaygroundWrapper from '@/components/containers/tutorial-playground-wrapper'
 import TutorialTextWrapper from '@/components/containers/tutorial-text-wrapper'
 import { LvVariants } from '@/components/modelling/main-equations'
+import { Button } from '@/components/ui/button'
 import '@/styles/index.css'
+import { Link } from 'react-router'
 
 export type TutorialContent = Array<React.ReactNode>
 
@@ -96,6 +99,26 @@ function Tutorial() {
         </ul>
         <br/><p><b>These assumptions don't mean the model is invalid though!</b> We know that predator and prey populations fluctuate with relevance to one another and Lotka-Volterra models that.</p>
       </>
+    }),
+    TutorialTextWrapper({
+      header: <h2 className="text-center">Tutorial complete!</h2>,
+      text: <div className="flex flex-col gap-4 items-center">
+        <p>Feel free to go to the playground to experiment with the Lotka-Volterra equation or replay the tutorial if you need.</p>
+        <div className="flex flex-col gap-2">
+          <Button variant="outline" className="flex gap-2 w-56" asChild>
+            <Link to="/">
+              <House className="z-1 size-8" />
+              <p className="z-1 text-xl">Go home</p>
+            </Link>
+         </Button>
+         <Button variant="outline" className="flex gap-2 w-56" asChild>
+            <Link to="/playground">
+              <Box className="z-1 size-8" />
+              <p className="z-1 text-xl">Playground</p>
+            </Link>
+         </Button>
+        </div>
+      </div>
     })
   ]
   

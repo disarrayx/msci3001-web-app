@@ -5,13 +5,13 @@ import { Slot } from "radix-ui"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "group/button rounded-none text-black dark:text-white inline-flex shrink-0 items-center justify-centerborder border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/button rounded-none text-black dark:text-white inline-flex shrink-0 items-center justify-center border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
         default: "hover:bg-black dark:hover:text-white",
         outline:
-          "border-3 py-6 px-12 border-black dark:border-white aria-expanded:bg-muted aria-expanded:text-foreground",
+          "stroke-2 relative overflow-hidden bg-transparent border-3 py-6 px-12 border-black dark:border-white text-black dark:text-white transition-colors before:absolute before:inset-0 before:-z-0 before:pointer-events-none before:origin-left before:scale-x-0 before:bg-black dark:before:bg-white before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-x-100 hover:text-white dark:hover:text-black aria-expanded:bg-muted aria-expanded:text-foreground stroke-black dark:stroke-white hover:stroke-white hover:dark:stroke-black",
       },
       size: {
         default:
