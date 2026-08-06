@@ -1,18 +1,8 @@
 import TutorialContainer from '@/components/tutorial-container'
-import { Solver } from '@/lib/odex'
 import '@/styles/index.css'
 
 export type TutorialContent = Array<React.ReactNode>
 
-// note: y[0] = x, y[1] = y, t = x
-function SimpleFx(): (x: number, y:Array<number>) => Array<number>  {
-  return function(_x: number, y: Array<number>): Array<number> {
-    return [
-      y[0],
-      y[1]
-    ]
-  }
-}
 
 function Tutorial() {
   const tutorialContent: TutorialContent = [
