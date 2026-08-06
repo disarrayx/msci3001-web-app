@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import { Button } from '@/components/shadcn/button'
+import { Button } from '@/components/ui/button'
 import { House, Box, Book, Sun, Moon } from '@/assets/svg.tsx'
 import { useTheme } from "@/components/theme-provider"
 

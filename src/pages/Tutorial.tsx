@@ -1,7 +1,18 @@
 import TutorialContainer from '@/components/tutorial-container'
+import { Solver } from '@/lib/odex'
 import '@/styles/index.css'
 
 export type TutorialContent = Array<React.ReactNode>
+
+// note: y[0] = x, y[1] = y, t = x
+function SimpleFx(): (x: number, y:Array<number>) => Array<number>  {
+  return function(_x: number, y: Array<number>): Array<number> {
+    return [
+      y[0],
+      y[1]
+    ]
+  }
+}
 
 function Tutorial() {
   const tutorialContent: TutorialContent = [
@@ -14,8 +25,20 @@ function Tutorial() {
     <>
       <h2 className="text-center">What are differential equations?</h2>
       <br/><br/><h2 className="text-center">dx/dt</h2>
-      <br/><br/><p>This is an example of a differential equation. We will define our variables as:</p>
-
+      <br/><p>This is an example of a differential equation. We will define our variables as:</p>
+      <ul>
+        <li>x = the population of species A</li>
+        <li>t = time in days</li>
+      </ul>
+      <br/><p>To translate our equation:</p>
+      <ul>
+        <li>dx/dt → how fast species A's population increasing/decreasing each day</li>
+        <li>dx/dt = x → the population grows by exactly as many individuals as currently exist each day</li>
+        <ul><li>E.g. If there were 5 individuals on day 2, then on day 3 there will be 10 (5 + 5)</li></ul>
+      </ul>
+      <br/><p>For this equation: the more individuals there are, the faster a population. Let's visualise this.</p>
+    </>,
+    <>
     </>
   ]
   
