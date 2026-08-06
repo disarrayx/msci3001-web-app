@@ -1,4 +1,5 @@
 import PlaygroundContainer from '@/components/containers/playground-container'
+import { LvVariants } from '@/components/modelling/main-equations'
 import '@/styles/index.css'
 
 export type PlaygroundContent = React.ReactNode
@@ -12,8 +13,8 @@ function Playground() {
     </>
   
   return (
-    <div className="p-16">
-      <PlaygroundContainer content={content} equations={{simple: true, lv: true}}/>
+    <div className="flex p-16 grow min-h-full">
+      <PlaygroundContainer content={content} equations={{simple: true, lv: LvVariants.FULL}}/>
     </div>
   )
 }

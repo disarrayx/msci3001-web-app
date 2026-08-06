@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
-import { LotkaVolterra, basicOde, lvSliders, basicSliders } from './equations'
+import { LotkaVolterra, basicOde, lvSliders, basicSliders } from './main-equations'
+import { LotkaVolterra1, LotkaVolterra2, lv1Sliders, lv2Sliders, lv3Sliders } from './lv-variants'
 
 export const Odes = {
   'basic': {
@@ -12,6 +13,36 @@ export const Odes = {
     ],
     compute: (v: Record<string, number>) =>
       basicOde(v.x0, v.y0, v.tEnd),
+  },
+  'lv1': {
+    label: 'LV Variant 1',
+    sliders: lv1Sliders,
+    lines: [
+      { dataKey: 'prey', stroke: '#004FCD' },
+      { dataKey: 'predator', stroke: '#CD0000' },
+    ],
+    compute: (v: Record<string, number>) =>
+      LotkaVolterra1(v.alpha, v.gamma, v.x0, v.y0, v.tEnd),
+  },
+  'lv2': {
+    label: 'LV Variant 2',
+    sliders: lv2Sliders,
+    lines: [
+      { dataKey: 'prey', stroke: '#004FCD' },
+      { dataKey: 'predator', stroke: '#CD0000' },
+    ],
+    compute: (v: Record<string, number>) =>
+      LotkaVolterra2(v.alpha, v.gamma, v.x0, v.y0, v.tEnd),
+  },
+  'lv3': {
+    label: 'LV Variant 3',
+    sliders: lv3Sliders,
+    lines: [
+      { dataKey: 'prey', stroke: '#004FCD' },
+      { dataKey: 'predator', stroke: '#CD0000' },
+    ],
+    compute: (v: Record<string, number>) =>
+      LotkaVolterra(v.alpha, v.beta, v.gamma, v.delta, v.x0, v.y0, v.tEnd),
   },
   'lotka-volterra': {
     label: 'Lotka-Volterra',

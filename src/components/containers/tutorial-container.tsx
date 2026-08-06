@@ -92,7 +92,7 @@ function TutorialContainer({ content }: TutorialContainerProps) {
             <div className="grow min-h-full min-w-full flex flex-col">
                 {content[progress]}
             </div>
-            <div className="flex justify-between min-w-full">
+            <div className="flex justify-between min-w-full mt-8">
                 {backButton}
                 {nextButton}
             </div>
