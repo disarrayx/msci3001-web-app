@@ -3,16 +3,6 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import { LotkaVolterra, basicOde, lvSliders, basicSliders } from './equations'
 
 export const Odes = {
-  'lotka-volterra': {
-    label: 'Lotka-Volterra',
-    sliders: lvSliders,
-    lines: [
-      { dataKey: 'prey', stroke: '#004FCD' },
-      { dataKey: 'predator', stroke: '#CD0000' },
-    ],
-    compute: (v: Record<string, number>) =>
-      LotkaVolterra(v.alpha, v.beta, v.gamma, v.delta, v.x0, v.y0, v.tEnd),
-  },
   'basic': {
     label: 'Basic',
     sliders: basicSliders,
@@ -22,6 +12,16 @@ export const Odes = {
     ],
     compute: (v: Record<string, number>) =>
       basicOde(v.x0, v.y0, v.tEnd),
+  },
+  'lotka-volterra': {
+    label: 'Lotka-Volterra',
+    sliders: lvSliders,
+    lines: [
+      { dataKey: 'prey', stroke: '#004FCD' },
+      { dataKey: 'predator', stroke: '#CD0000' },
+    ],
+    compute: (v: Record<string, number>) =>
+      LotkaVolterra(v.alpha, v.beta, v.gamma, v.delta, v.x0, v.y0, v.tEnd),
   },
 } as const
 
@@ -37,7 +37,7 @@ export default function GraphVisualiser({ graph, values }: GraphVisualiserProps)
   const data = useMemo(() => ode.compute(values), [graph, values, ode]) as Record<string, number>[]
 
   return (
-    <ResponsiveContainer width="100%" height={350}>
+    <ResponsiveContainer width="100%" height="100%">
       <LineChart data={data} responsive>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="t" label={{ value: 'time', position: 'insideBottom', offset: -5 }} />

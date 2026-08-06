@@ -3,14 +3,12 @@ import '@/styles/index.css'
 
 export type PlaygroundContent = Array<React.ReactNode>
 
-// props passed into lotka volterra 
-// = starting prey, starting pred
-// = prey growth, pred growth, pred rate, pred
+// equation selector: simple, lv, all
 
 function Playground() {
   const content = [
     <>
-      <h3><b>Differential Equations</b></h3>
+      <h3><b>Equation Selector</b></h3>
     </>,
     <p>second</p>
   ]
